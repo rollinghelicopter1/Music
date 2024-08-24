@@ -19,7 +19,7 @@ export class AppService {
     private  songs=[
         {
         "song":1,
-            "path":"/Users/meerasrinivasan/WebstormProjects/music/music/uploads/Fortunate_Son.mp3"
+            "path":"/Users/meir/stock/projects/Nikhil/Music2/src/uploads/Fortunate_Son.mp3"
     },/*
         {
             "song":2,
@@ -142,12 +142,14 @@ export class AppService {
                         item:results.map(song=>({
                             "itunes:episodeType":"full",
                             "itunes:title": song.Title,
-                            description: `Album: ${song.Album}, Duration: ${song.Duration}, Artist: ${song.Artist}`,
+                            title: song.Title,
+                            // description: `Album: ${song.Album}, Duration: ${song.Duration}, Artist: ${song.Artist}`,
+                            description: `hello description`,
                             enclosure: {
                                 $: {
                                     length: song.size,
                                     type: "audio/mpeg",
-                                    url: path.join(`http://localhost:3000/file/Fortunate_Son.mp3`), // Construct the URL for the media file
+                                    url: "http://localhost:3000/file/Fortunate_Son.mp3", // Construct the URL for the media file
 
 
                                 }
@@ -156,10 +158,8 @@ export class AppService {
                             },
                             "guid":"http://localhost:3000/file/Fortunate_Son.mp3",
                             "pubDate":"Tue, 8 Jan 2019 01:15:00 GMT",
-                            "itunes:duration": song.Duration,
+                            "itunes:duration": 142,
                             "itunes:explicit":"false",
-
-
                         }))
 
                 }
